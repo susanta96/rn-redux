@@ -32,7 +32,7 @@ class PlaceInput extends Component {
           style={styles.placeInput}
         />
         <TouchableOpacity style={styles.placeButton} onPress={this.placeSubmitHandler}>
-          <Ionicons name="ios-add-circle" size={26} />
+          <Ionicons name="ios-add-circle" size={26} color="skyblue"/>
         </TouchableOpacity>
         {/* <Button
           title="Add Place"

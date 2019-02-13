@@ -6,7 +6,7 @@ import AppContainer from './AppContainer'
 
 const store = configureStore();
 
-export default class index extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>

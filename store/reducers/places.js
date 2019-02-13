@@ -2,7 +2,8 @@ import { ADD_PLACE, DELETE_PLACE, SELECT_PLACE, DESELECT_PLACE } from "../action
 
 const initialState ={
     places: [],
-    selectedPlace: null
+    selectedPlace: null,
+    itemAdded: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -16,7 +17,8 @@ const reducer = (state = initialState, action) => {
                     image: {
                       uri: 'https://cdn.britannica.com/s:500x350/91/110191-004-712A890F.jpg'
                     }
-                })
+                }),
+                itemAdded: true
             }
         case DELETE_PLACE:
             return {
