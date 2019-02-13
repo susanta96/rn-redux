@@ -3,22 +3,18 @@ import {View, StyleSheet} from 'react-native'
 import { connect } from 'react-redux'
 import PlaceInput from '../components/PlaceInput/PlaceInput'
 import {addPlace} from '../store/actions/places'
-import ShowPlace from '../screen/ShowPlace'
 
 class SharePlace extends React.Component {
 
-    placeAddedHandler = placeName => {
-        Promise.all(this.props.onAddPlace(placeName)).then(
-                this.props.navigation.navigate('ShowPlace')
-            
-        )
+    // placeAddedHandler = placeName => {
+    //     this.props.onAddPlace(placeName)
         
-    };
+    // };
 
     render() {
         return(
             <View style={styles.container}>
-            <PlaceInput onPlaceAdded={this.placeAddedHandler} />
+            <PlaceInput onPlaceAdded={(placeName) => this.props.navigation.navigate('Show', this.props.onAddPlace(placeName))} />
             </View>
         );
     }
@@ -36,12 +32,6 @@ const styles = StyleSheet.create({
   }
 })
 
-const mapStateToProps = state => {
-    return {
-        itemAdded: state.places.itemAdded
-    }
-}
-
 const mapDispatchToProps = dispatch => {
     return{
         onAddPlace: (name) => dispatch(addPlace(name))
@@ -49,4 +39,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(SharePlace);
+export default connect(null,mapDispatchToProps)(SharePlace);

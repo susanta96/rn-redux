@@ -9,6 +9,7 @@ const TabNavigator = createMaterialTopTabNavigator({
   Show: { screen: ShowPlace },
   },
   {
+    initialRouteName: "Share",
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarOptions: {
         activeTintColor: 'white',
